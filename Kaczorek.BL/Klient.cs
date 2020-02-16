@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Kaczorek.BL
 {
     public class Klient
     {
+        //właściwości
         public static int Licznik { get; set; }
 
 
@@ -46,6 +48,44 @@ namespace Kaczorek.BL
                 }
                 return imieNazwisko;
             }
+        }
+        //Metody
+        public bool Zwaliduj()
+        {
+            var poprawne = true;
+            if (string.IsNullOrWhiteSpace(Nazwisko))
+                poprawne = false;
+            if (string.IsNullOrWhiteSpace(Email))
+                poprawne = false;
+            return poprawne;
+        }
+        /// <summary>
+        /// Zapisuje klienta
+        /// </summary>
+        /// <returns></returns>
+        public bool Zapisz()
+        {
+            // kod który zapisuje zdefiniowanego klienta
+            return true;
+        }
+        /// <summary>
+        /// Pobieramy jednego klienta
+        /// </summary>
+        /// <param name="klientId"></param>
+        /// <returns></returns>
+        public Klient Pobierz(int klientId)
+        {
+            //kod który pobiera określonego klienta
+            return new Klient();
+        }
+        /// <summary>
+        /// Pobieramy wszystkich klientów
+        /// </summary>
+        /// <returns></returns>
+        public List<Klient> Pobierz()
+        {
+            //kod pobiera wszystkich klientów
+            return new List<Klient>();
         }
     }
 }

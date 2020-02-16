@@ -92,5 +92,42 @@ namespace Kaczorek.BLTest
 
             Assert.AreEqual(3, Klient.Licznik);
         }
+
+        [TestMethod]
+        public void ZwalidujTest()
+        {
+            //Arrange
+
+            var klient = new Klient();
+            klient.Nazwisko = "Kowal";
+            klient.Email = "marcin@def-hobby.pl";
+            var oczekiwana = true;
+
+            //Act
+
+            var aktualna = klient.Zwaliduj();
+
+            //Assert
+
+            Assert.AreEqual(oczekiwana, aktualna);
+        }
+        [TestMethod]
+        public void ZwalidujBrakNazwiskaTest()
+        {
+            //Arrange
+
+            var klient = new Klient();
+           
+            klient.Email = "marcin@def-hobby.pl";
+            var oczekiwana = false;
+
+            //Act
+
+            var aktualna = klient.Zwaliduj();
+
+            //Assert
+
+            Assert.AreEqual(oczekiwana, aktualna);
+        }
     }
 }
