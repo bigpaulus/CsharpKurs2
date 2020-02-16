@@ -26,5 +26,45 @@ namespace Kaczorek.BLTest
 
             Assert.AreEqual(oczekiwana, aktualna);
         }
+
+        [TestMethod]
+        public void ImieNazwiskoImiePusteTest()
+        {
+            //Arrange (przygotuj test)
+
+            Klient klient = new Klient();
+       
+            klient.Nazwisko = "Kowal";
+
+            string oczekiwana = "Kowal";
+
+            //Act (działaj)
+
+            string aktualna = klient.ImieNazwisko;
+
+            //Assert (potwierdź test)
+
+            Assert.AreEqual(oczekiwana, aktualna);
+        }
+
+        [TestMethod]
+        public void ImieNazwiskoNazwiskoPusteTest()
+        {
+            //Arrange (przygotuj test)
+
+            Klient klient = new Klient();
+
+            klient.Imie = "Robert";
+
+            string oczekiwana = "Robert";
+
+            //Act (działaj)
+
+            string aktualna = klient.ImieNazwisko;
+
+            //Assert (potwierdź test)
+
+            Assert.AreEqual(oczekiwana, aktualna);
+        }
     }
 }
