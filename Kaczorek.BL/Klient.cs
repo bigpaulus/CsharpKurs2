@@ -30,7 +30,7 @@ namespace Kaczorek.BL
         {
             get
             {
-                return Imie + "," + Nazwisko;
+                return Imie + ", " + Nazwisko;
             }
         }
     }
