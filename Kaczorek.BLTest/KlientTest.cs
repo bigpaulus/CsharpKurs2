@@ -129,5 +129,26 @@ namespace Kaczorek.BLTest
 
             Assert.AreEqual(oczekiwana, aktualna);
         }
+        [TestMethod]
+        public void ZwalidujEmailTest()
+        {
+            //Arrange
+
+            var klient = new Klient();
+
+            klient.Nazwisko = "Kowal";
+            var oczekiwana = false;
+
+            //Act
+
+            var aktualna = klient.Zwaliduj();
+
+            //Assert
+
+            Assert.AreEqual(oczekiwana, aktualna);
+        }
+
+
+
     }
 }
