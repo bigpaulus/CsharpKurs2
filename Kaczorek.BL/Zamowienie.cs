@@ -6,6 +6,7 @@ namespace Kaczorek.BL
 {
     public class Zamowienie
     {
+        #region konstruktory
         public Zamowienie()
         {
 
@@ -14,18 +15,28 @@ namespace Kaczorek.BL
         {
             ZamowienieId = zamowienieID;
         }
+
+        #endregion
+
+        #region własciwości
         public int ZamowienieId { get; private set; }
         public DateTimeOffset? DataZamowienia { get; set; }
+        public List<PozycjaZamowienia> PozycjaZamowienia { get; set; }
+        public int KlientId { get; set; }
+        public int AdresDostawyId { get; set; }
+
+        
+        #endregion
 
 
-
+        #region Metody
         //Metody
         public bool Zwaliduj()
         {
             var poprawne = true;
-            if (DataZamowienia==null)
+            if (DataZamowienia == null)
                 poprawne = false;
-           
+
             return poprawne;
         }
         /// <summary>
@@ -56,5 +67,12 @@ namespace Kaczorek.BL
             //kod pobiera wszystkich klientów
             return new List<Zamowienie>();
         }
+        #endregion
     }
 }
+
+
+
+
+
+

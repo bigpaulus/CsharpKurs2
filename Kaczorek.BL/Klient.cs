@@ -5,17 +5,21 @@ namespace Kaczorek.BL
 {
     public class Klient
     {
-        public Klient()
+
+        #region konstruktory
+
+        public Klient() : this(0)
         {
 
         }
         public Klient (int klientId)
         {
             KlientId = klientId;
+            ListaAdresow = new List<Adres>();
         }
+        #endregion
 
-
-
+        #region właściwości
         //właściwości
         public static int Licznik { get; set; }
 
@@ -60,6 +64,15 @@ namespace Kaczorek.BL
                 return imieNazwisko;
             }
         }
+
+        public List<Adres> ListaAdresow { get; set; }
+        public int KlientTyp { get; set; }
+
+
+        #endregion
+
+        #region metody
+
         //Metody
         public bool Zwaliduj()
         {
@@ -98,5 +111,6 @@ namespace Kaczorek.BL
             //kod pobiera wszystkich klientów
             return new List<Klient>();
         }
+        #endregion
     }
 }

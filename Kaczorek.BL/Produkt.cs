@@ -50,10 +50,10 @@ namespace Kaczorek.BL
         /// </summary>
         /// <param name="klientId"></param>
         /// <returns></returns>
-        public Klient Pobierz(int produktId)
+        public Produkt Pobierz(int produktId)
         {
             //kod który pobiera określonny produkt
-            return new Klient();
+            return new Produkt();
         }
         /// <summary>
         /// Pobieramy wszystkie produkty
