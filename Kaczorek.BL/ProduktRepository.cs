@@ -46,10 +46,24 @@ namespace Kaczorek.BL
         /// Zapisuje Produkt
         /// </summary>
         /// <returns></returns>
-        public bool Zapisz()
+        public bool Zapisz(Produkt produkt)
         {
             // kod który zapisuje zdefiniowanego Produkt
-            return true;
+            var sukces = true;
+            if (produkt.MaZmiany && produkt.DanePrawidlowe)
+            {
+                if (produkt.JestNowy)
+                {
+                    //wywołaj procedure insert
+                }
+                else
+                {
+                    //wywolac procedure update
+                }
+            }
+
+
+            return sukces;
         }
     }
 }

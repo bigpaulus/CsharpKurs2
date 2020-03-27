@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Kaczorek.BL
 {
-    public class Zamowienie
+    public class Zamowienie: KlasaBazowa
     {
         #region konstruktory
         public Zamowienie()
@@ -31,7 +31,7 @@ namespace Kaczorek.BL
 
         #region Metody
         //Metody
-        public bool Zwaliduj()
+        public override bool Zwaliduj()
         {
             var poprawne = true;
             if (DataZamowienia == null)

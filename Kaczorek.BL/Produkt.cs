@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Kaczorek.BL
 {
-    public class Produkt
+    public class Produkt : KlasaBazowa
     {
         public Produkt()
         {
@@ -27,7 +27,7 @@ namespace Kaczorek.BL
         /// Sprawdza dane produktu
         /// </summary>
         /// <returns></returns>
-        public bool Zwaliduj()
+        public override bool Zwaliduj()
         {
             var poprawne = true;
             if (string.IsNullOrWhiteSpace(NazwaProduktu))

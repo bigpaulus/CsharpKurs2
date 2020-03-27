@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Kaczorek.BL
 {
-    public class Klient
+    public class Klient: KlasaBazowa
     {
 
         #region konstruktory
@@ -74,7 +74,7 @@ namespace Kaczorek.BL
         #region metody
 
         //Metody
-        public bool Zwaliduj()
+        public override bool Zwaliduj()
         {
             var poprawne = true;
             if (string.IsNullOrWhiteSpace(Nazwisko))
