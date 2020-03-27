@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Common;
 
 namespace Kaczorek.BL
 {
-    public class Klient: KlasaBazowa
+    public class Klient: KlasaBazowa,ILogowanie
+
     {
 
         #region konstruktory
@@ -115,6 +117,15 @@ namespace Kaczorek.BL
         {
             return ImieNazwisko;
         }
+
+        public string Log()
+        {
+            var log = KlientId + ": " + ImieNazwisko + " " + Email + " " + "Status: " + StanObiektu.ToString();
+
+
+            return log;
+        }
+
         #endregion
     }
 }

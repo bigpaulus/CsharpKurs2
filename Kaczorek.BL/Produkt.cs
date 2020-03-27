@@ -4,7 +4,7 @@ using Common;
 
 namespace Kaczorek.BL
 {
-    public class Produkt : KlasaBazowa
+    public class Produkt : KlasaBazowa, ILogowanie
     {
         public Produkt()
         {
@@ -82,6 +82,12 @@ namespace Kaczorek.BL
             return NazwaProduktu;
         }
 
+        public string Log()
+        {
+            var log = ProduktId + ": " + NazwaProduktu + " " + Opis + " " + "Status: " + StanObiektu.ToString();
+
+            return log;
+        }
        
     }
 }
