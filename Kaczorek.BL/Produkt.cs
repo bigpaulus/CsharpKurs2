@@ -19,7 +19,14 @@ namespace Kaczorek.BL
 
         public Decimal? AktualnaCena { get; set; }
         public string Opis { get; set; }
-        public string NazwaProduktu { get; set; }
+        private string _NazwaProduktu;
+
+        public string NazwaProduktu
+        {
+            get { return _NazwaProduktu; }
+            set { _NazwaProduktu = value; }
+        }
+
 
 
         //Metody
@@ -69,5 +76,7 @@ namespace Kaczorek.BL
         {
             return NazwaProduktu;
         }
+
+       
     }
 }
