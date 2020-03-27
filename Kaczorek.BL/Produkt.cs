@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Common;
 
 namespace Kaczorek.BL
 {
@@ -23,7 +23,12 @@ namespace Kaczorek.BL
 
         public string NazwaProduktu
         {
-            get { return _NazwaProduktu; }
+            get
+            {
+
+                return _NazwaProduktu.WstawSpacje();
+
+            }
             set { _NazwaProduktu = value; }
         }
 
