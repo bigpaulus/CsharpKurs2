@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Kaczorek.BL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -33,8 +34,43 @@ namespace Kaczorek.BLTest
             var zamowienieRepository = new ZamowienieRepository();
             var oczekiwane = new WyswietlanieZamowienia()
             {
-                DataZamowienia = new DateTimeOffset(2018, 4, 20, 11, 00, 00, new TimeSpan(7, 0, 0))
+
+
+
+
+                Imie = "Jacek",
+                Nazwisko = "Kowal",
+                DataZamowienia = new DateTimeOffset(2018, 5, 21, 12, 00, 00, new TimeSpan(5, 0, 0)),
+
+
+                AdresDostawy = new Adres()
+                {
+                    AdresTyp = 2,
+                    Ulica = "Mila",
+                    Miasto = "Katowice",
+                    Kraj = "Polska",
+                    KodPocztowy = "44-400"
+                },
+                WyswietlaniePozycjiZamowieniaLista = new List<WyswietlaniePozycjiZamowienia>()
+            {
+
+             new WyswietlaniePozycjiZamowienia()
+                {
+                    NazwaProduktu = "Stol",
+                    CenaZakupu = 300.50M,
+                    Ilosc = 10
+                },
+               new WyswietlaniePozycjiZamowienia()
+                {
+                    NazwaProduktu = "blat",
+                    CenaZakupu = 50.330M,
+                    Ilosc = 5
+                }
+                }
             };
+
+            
+
             //Act
 
             var aktualne = zamowienieRepository.PobierzZamowienieDoWyswietlenia(10);
