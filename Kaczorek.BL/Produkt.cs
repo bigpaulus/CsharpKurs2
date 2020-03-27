@@ -65,6 +65,9 @@ namespace Kaczorek.BL
             return new List<Produkt>();
         }
 
-
+        public override string ToString()
+        {
+            return NazwaProduktu;
+        }
     }
 }

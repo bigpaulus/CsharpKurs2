@@ -17,6 +17,9 @@ namespace Kaczorek.BL
         {
             //tworzenie instancji produktu
             Produkt produkt = new Produkt(produktId);
+            Object mojObiekt = new Object();
+            Console.WriteLine("Obiekt  :" + mojObiekt.ToString());
+            Console.WriteLine("Produkt  :" + produkt.ToString());
 
             //kod który pobiera określonny produkt
 
